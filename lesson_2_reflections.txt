@@ -64,3 +64,13 @@ code or designs we can still work on our "main" branch, so that if friend's come
 over to view what we're doing we can still show them the main program, while we 
 could have been making drastic changes in the experimental branch that would 
 make the game not ready to try and play yet.
+
+
+********************************************************************************
+How do the diagrams help you visualize the branch structure?
+********************************************************************************
+
+Help visualise what has happened in each branch with short commit messages, 
+where each branch diverge (and possibly merge), what part of the history each
+branch (label) points to, and what commits are possibly unreachable if you don't
+save a new branch.
