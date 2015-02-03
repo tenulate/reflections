@@ -74,3 +74,22 @@ Help visualise what has happened in each branch with short commit messages,
 where each branch diverge (and possibly merge), what part of the history each
 branch (label) points to, and what commits are possibly unreachable if you don't
 save a new branch.
+
+
+********************************************************************************
+What is the result of merging two branches together? Why do we represent it in 
+the diagram the way we do?
+********************************************************************************
+
+Mergine two branches together results in the currently checked out branch being
+updated. It contains all the edits of both branches, which is possible because
+git has the history of each branch's file, so it can determine what their 
+original state was, and what lines were added and deleted from this in the two 
+branches. 
+
+It's good to represent these branches in the diagram because it is easy to see
+what commits are the parents of each, which shows what content each commit had
+to begin with before making changes. When we merge the branches the git log only
+shows commits in chronological order, but there may be many different logical
+steps between two branches commited 1 time step apart. Hence this branch diagram
+is a way to show the LOGICAL progression of the code, not the chronological.
