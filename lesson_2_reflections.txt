@@ -93,3 +93,16 @@ to begin with before making changes. When we merge the branches the git log only
 shows commits in chronological order, but there may be many different logical
 steps between two branches commited 1 time step apart. Hence this branch diagram
 is a way to show the LOGICAL progression of the code, not the chronological.
+
+
+********************************************************************************
+What are the pros and cons of Git’s automatic merging vs. always doing merges 
+manually?
+********************************************************************************
+
+Automatically merging different parts of the text file are great because they're
+going to be different parts of the code. Manually merging them however makes it
+so that the programmer has to understand the conflict changes, eg. do these 
+pieces of code actually do the same thing or not? This way the programmer can 
+decide how to combine two different files into one, and makes it less likely 
+that the code is semantically incorrect.
