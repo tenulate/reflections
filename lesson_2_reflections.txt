@@ -39,3 +39,28 @@ first commit. Commiting this first change I might have a commit message like
 "made a test file to run code against". Afterwards I would add main.py to the
 staging area, then commit that change with a message "added first function to 
 main"
+
+
+********************************************************************************
+How can you use the staging area to make sure you have one commit per logical 
+change?
+********************************************************************************
+
+By adding only files that belong to a logical grouping (eg. all files related to
+adding colour to a program) to the staging area we can commit only the changes
+reflected in those files - and hence commit only changes related to eg. adding
+colour.
+
+
+********************************************************************************
+What are some situations when branches would be helpful in keeping your history 
+organized? How would branches help?
+********************************************************************************
+
+Branches are helpful by labelling specific commits with a useful name, eg. by 
+creating a branch v1.0 for the first deliverable version of your software. They
+can act as milestones basically. By making new branches to test out experimental 
+code or designs we can still work on our "main" branch, so that if friend's come
+over to view what we're doing we can still show them the main program, while we 
+could have been making drastic changes in the experimental branch that would 
+make the game not ready to try and play yet.
