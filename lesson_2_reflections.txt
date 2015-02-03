@@ -1,0 +1,41 @@
+********************************************************************************
+What happens when you initialize a repository? Why do you need to do it?
+********************************************************************************
+
+When you initialise a repository with "git init" it creates a directory ".git". 
+The dot infront means it's hidden, as you won't be editing or looking into this
+directory. Instead when you make "git commits" and other changes, the history
+of the project gets stored in the .git folder.
+
+You need to do this in order for git to start tracking changes to files in your 
+working directory. Note that the initial "git init" command doesn't actually
+make a commit for you. This is because 
+	* If it did so automatically you couldn't write a message associated with 
+		the commit
+	* You may not want to track ALL the files in the directory. For example it 
+		may contain .c files which you want to track, but in addition .o or .exe
+		files which aren't important to the project (nobody edits these files, 
+		the compiler does it automatically)
+
+
+********************************************************************************
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+********************************************************************************
+
+The working directory is just the files that I can currently view and edit. Just
+like a normal directory in windows/linux. The repository contains the history of
+all the files in the working directory. This history is stored in a hidden 
+folder .git within the working directory. The staging area is different to both
+of these because it's basically a list of files in the working directory that 
+you want to be recorded in the next git commit. It adds value by allowing me to 
+specifiy which files I want to be added in the next commit. With this it is 
+easier to split the commits into logically distinct transactions - for example
+my first commit might only be the test_main.py file, because I'm doing test 
+driven development where tests are written before the code. This is logically 
+distinct from the code itself, so I would add test_main.py to the staging area, 
+main.py might exist in the working directory but I don't want that added in this 
+first commit. Commiting this first change I might have a commit message like 
+"made a test file to run code against". Afterwards I would add main.py to the
+staging area, then commit that change with a message "added first function to 
+main"
