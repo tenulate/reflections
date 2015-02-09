@@ -1,108 +1,94 @@
-********************************************************************************
 What happens when you initialize a repository? Why do you need to do it?
-********************************************************************************
 
-When you initialise a repository with "git init" it creates a directory ".git". 
-The dot infront means it's hidden, as you won't be editing or looking into this
-directory. Instead when you make "git commits" and other changes, the history
-of the project gets stored in the .git folder.
+	When you initialise a repository with "git init" it creates a directory ".git". 
+	The dot infront means it's hidden, as you won't be editing or looking into this
+	directory. Instead when you make "git commits" and other changes, the history
+	of the project gets stored in the .git folder.
 
-You need to do this in order for git to start tracking changes to files in your 
-working directory. Note that the initial "git init" command doesn't actually
-make a commit for you. This is because 
-	* If it did so automatically you couldn't write a message associated with 
-		the commit
-	* You may not want to track ALL the files in the directory. For example it 
-		may contain .c files which you want to track, but in addition .o or .exe
-		files which aren't important to the project (nobody edits these files, 
-		the compiler does it automatically)
+	You need to do this in order for git to start tracking changes to files in your 
+	working directory. Note that the initial "git init" command doesn't actually
+	make a commit for you. This is because 
+		* If it did so automatically you couldn't write a message associated with 
+			the commit
+		* You may not want to track ALL the files in the directory. For example it 
+			may contain .c files which you want to track, but in addition .o or .exe
+			files which aren't important to the project (nobody edits these files, 
+			the compiler does it automatically)
 
 
-********************************************************************************
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
-********************************************************************************
 
-The working directory is just the files that I can currently view and edit. Just
-like a normal directory in windows/linux. The repository contains the history of
-all the files in the working directory. This history is stored in a hidden 
-folder .git within the working directory. The staging area is different to both
-of these because it's basically a list of files in the working directory that 
-you want to be recorded in the next git commit. It adds value by allowing me to 
-specifiy which files I want to be added in the next commit. With this it is 
-easier to split the commits into logically distinct transactions - for example
-my first commit might only be the test_main.py file, because I'm doing test 
-driven development where tests are written before the code. This is logically 
-distinct from the code itself, so I would add test_main.py to the staging area, 
-main.py might exist in the working directory but I don't want that added in this 
-first commit. Commiting this first change I might have a commit message like 
-"made a test file to run code against". Afterwards I would add main.py to the
-staging area, then commit that change with a message "added first function to 
-main"
+	The working directory is just the files that I can currently view and edit. Just
+	like a normal directory in windows/linux. The repository contains the history of
+	all the files in the working directory. This history is stored in a hidden 
+	folder .git within the working directory. The staging area is different to both
+	of these because it's basically a list of files in the working directory that 
+	you want to be recorded in the next git commit. It adds value by allowing me to 
+	specifiy which files I want to be added in the next commit. With this it is 
+	easier to split the commits into logically distinct transactions - for example
+	my first commit might only be the test_main.py file, because I'm doing test 
+	driven development where tests are written before the code. This is logically 
+	distinct from the code itself, so I would add test_main.py to the staging area, 
+	main.py might exist in the working directory but I don't want that added in this 
+	first commit. Commiting this first change I might have a commit message like 
+	"made a test file to run code against". Afterwards I would add main.py to the
+	staging area, then commit that change with a message "added first function to 
+	main"
 
 
-********************************************************************************
 How can you use the staging area to make sure you have one commit per logical 
 change?
-********************************************************************************
 
-By adding only files that belong to a logical grouping (eg. all files related to
-adding colour to a program) to the staging area we can commit only the changes
-reflected in those files - and hence commit only changes related to eg. adding
-colour.
+	By adding only files that belong to a logical grouping (eg. all files related to
+	adding colour to a program) to the staging area we can commit only the changes
+	reflected in those files - and hence commit only changes related to eg. adding
+	colour.
 
 
-********************************************************************************
 What are some situations when branches would be helpful in keeping your history 
 organized? How would branches help?
-********************************************************************************
 
-Branches are helpful by labelling specific commits with a useful name, eg. by 
-creating a branch v1.0 for the first deliverable version of your software. They
-can act as milestones basically. By making new branches to test out experimental 
-code or designs we can still work on our "main" branch, so that if friend's come
-over to view what we're doing we can still show them the main program, while we 
-could have been making drastic changes in the experimental branch that would 
-make the game not ready to try and play yet.
+	Branches are helpful by labelling specific commits with a useful name, eg. by 
+	creating a branch v1.0 for the first deliverable version of your software. They
+	can act as milestones basically. By making new branches to test out experimental 
+	code or designs we can still work on our "main" branch, so that if friend's come
+	over to view what we're doing we can still show them the main program, while we 
+	could have been making drastic changes in the experimental branch that would 
+	make the game not ready to try and play yet.
 
 
-********************************************************************************
 How do the diagrams help you visualize the branch structure?
-********************************************************************************
 
-Help visualise what has happened in each branch with short commit messages, 
-where each branch diverge (and possibly merge), what part of the history each
-branch (label) points to, and what commits are possibly unreachable if you don't
-save a new branch.
+	Help visualise what has happened in each branch with short commit messages, 
+	where each branch diverge (and possibly merge), what part of the history each
+	branch (label) points to, and what commits are possibly unreachable if you don't
+	save a new branch.
 
 
-********************************************************************************
 What is the result of merging two branches together? Why do we represent it in 
 the diagram the way we do?
-********************************************************************************
 
-Mergine two branches together results in the currently checked out branch being
-updated. It contains all the edits of both branches, which is possible because
-git has the history of each branch's file, so it can determine what their 
-original state was, and what lines were added and deleted from this in the two 
-branches. 
+	Mergine two branches together results in the currently checked out branch being
+	updated. It contains all the edits of both branches, which is possible because
+	git has the history of each branch's file, so it can determine what their 
+	original state was, and what lines were added and deleted from this in the two 
+	branches. 
 
-It's good to represent these branches in the diagram because it is easy to see
-what commits are the parents of each, which shows what content each commit had
-to begin with before making changes. When we merge the branches the git log only
-shows commits in chronological order, but there may be many different logical
-steps between two branches commited 1 time step apart. Hence this branch diagram
-is a way to show the LOGICAL progression of the code, not the chronological.
+	It's good to represent these branches in the diagram because it is easy to see
+	what commits are the parents of each, which shows what content each commit had
+	to begin with before making changes. When we merge the branches the git log only
+	shows commits in chronological order, but there may be many different logical
+	steps between two branches commited 1 time step apart. Hence this branch diagram
+	is a way to show the LOGICAL progression of the code, not the chronological.
 
 
-********************************************************************************
 What are the pros and cons of Git’s automatic merging vs. always doing merges 
 manually?
-********************************************************************************
 
-Automatically merging different parts of the text file are great because they're
-going to be different parts of the code. Manually merging them however makes it
-so that the programmer has to understand the conflict changes, eg. do these 
-pieces of code actually do the same thing or not? This way the programmer can 
-decide how to combine two different files into one, and makes it less likely 
-that the code is semantically incorrect.
+	Automatically merging different parts of the text file are great because they're
+	going to be different parts of the code. Manually merging them however makes it
+	so that the programmer has to understand the conflict changes, eg. do these 
+	pieces of code actually do the same thing or not? This way the programmer can 
+	decide how to combine two different files into one, and makes it less likely 
+	that the code is semantically incorrect.
