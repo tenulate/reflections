@@ -2,11 +2,11 @@ How did viewing a diff between two versions of a file help you see the bug that
 was introduced?
 
 	It was easier to find the bug because I only had to concentrate on which part
-	of the code had changed. It got rid of all the clutter for things that were 
-	identical between the new and old versions of the file. Obviously the bug 
-	occurs only in the spot where you added more code. If things were working last 
-	time, and you added more code, after which things were broken, the only part
-	that could have broken your program is in the new code you added.
+	of the code had changed, as opposed to analysing and comprehending the entire
+	file.  As a commit is only going to be made on a working version of the code,
+	viewing the diff essentially answers "what's the difference between this 
+	working and non-working version"? The only part where a bug could be introduced
+	between the two is shown in the diff.
 
 	In both examples the bug was a typo however, and this was easier to spot as 
 	there was less code to examine. I don't think it would be as usefull if there 
@@ -20,14 +20,12 @@ efficient programmer in the long term?
 	By having access to the entire history we could then use this diff tool on it to
 	compare old and new versions. We get the benefit above (that we can track down a
 	bug more easily) but it would also let us "reload" an old version in case our 
-	new code REALLY screws up the program. 
-
-	I don't think viewing the file's ENTIRE history is going to make for more 
-	efficient programming, I mean who needs to see the entire history? Although
-	it may not be that often, it would still be useful for cases where you've 
-	thought "Oh I was trying something like that in the beginning, but decided not
-	to". If we could reload that old version we might still be able to salvage that
-	original work.
+	new code REALLY screws things up. The working version is probably going to 
+	be the last commit, so the file's entire history may not seem that valuable at
+	first glance, perhaps we should only save the previous state. However if you think
+	about it, we may not spot a bug until much later after it was introduced, in which
+	case having the entire history is necessary to track down when exactally the bug 
+	was introduced.
 
 
 What do you think are the pros and cons of manually choosing when to create a 
@@ -39,17 +37,21 @@ docs does?
 	the typo error for the user message etc. This isn't possible with automatically 
 	saved documents as there's no way for the computer to say "aha, he's just fixed
 	some typos there, time to commit that". This helps make the "git diff" output
-	more legible, as there's not so much clutter to get through. Imagine having 8 
-	versions of code saved at the end of the day when all you managed to do was fix
-	a single bug. Each commit would be "in the middle of fixing bug X", but really
-	you only want one "fixed bug X" commit. It also makes sure that each commited 
-	code is actually compilable. If it saved on the hour you might be in the middle
-	of a function definition that's syntactically incorrect. That version of the 
-	file isn't particularily useful to anyone.
+	more legible, as every change is related to the logic outlined in the commit 
+	message. 
 
-	The only down side is if you forget to save your work. In google docs that 
-	doesn't matter as you can just load by "last saved". But if you commnit often 
-	enough in small workable chunks this shouldn't be too much a problem.
+	With auto saving there is also a good chance that a commit isn't particularly
+	useful. Imagine having 8 versions of code saved at the end of the day when all 
+	you managed to do was fix a single bug. Each commit would be "in the middle of 
+	fixing bug X" (if the computer named them in a meaningful way), but really you 
+	only want one "fixed bug X" commit. The auto commited version is not necessarily
+	compilable, for example it may save a version of the file while you were in the 
+	middle of typing a function definition - that version of the file isn't 
+	particularily useful to anyone.
+
+	The only down side of manually commiting is if you forget to save your work. In 
+	google docs that doesn't happen as google saves regularly. But if you commnit 
+	often and in small workable chunks this shouldn't be too big a problem.
 
 
 Why do you think some version control systems, like Git, allow saving multiple 
@@ -59,11 +61,11 @@ files in one commit, while others, like Google Docs, treat each file separately?
 	programs rely on multiple files (eg. main.c math.c and header.h), so if we add
 	a small feature that requires changing all of these files in order to work, it 
 	makes sense to track these changes together. Otherwise we would have to manually
-	determine when all 3 files were in the same state by viewing their edited times.
+	determine when all 3 files were compatible with each other.
 
 	Google docs however is more about writing independent documents that don't rely 
-	on each other at all. For example your excel spread sheet for a budget is going
-	to be independent from your excel spread sheet for your semester classes.
+	on each other at all. Your excel spread sheet for a budget isn't going to rely 
+	on your engineering communication essay file.
 
 
 How can you use the commands git log and git diff to view the history of files?
@@ -71,8 +73,10 @@ How can you use the commands git log and git diff to view the history of files?
 	If we want to view history of files we use command "git log" to show us our 
 	commit messages, which will indicate what each commit acheived. To view the 
 	history of a file we just use "git diff old_id new_id" to see what changes were 
-	made during that commit. It won't necessarily give the history of a single file
-	but it will give us a history of all the files commited at that time.
+	made during that commit. It won't necessarily give the history of a single file,
+	but more of a list of changes to implement a specific feature. By going through
+	git log we see the list of all features added to the project, and can view how
+	each was implemented using git diff.
 
 
 How might using version control make you more confident to make changes that 
@@ -82,15 +86,17 @@ could break something?
 	potentially break my code because there is the "git checkout" option to just 
 	undo any changes I did make. That's great for trying new experimental things 
 	with the code, I would be happy refactoring, trying a new approach or just 
-	hacking apart previously written parts because it will be so easy to get back to
-	the working version later if everything goes balls up.
+	hacking apart previously written parts because it will be so easy to get back 
+	to a working version later if everything goes balls up.
 
 
 Now that you have your workspace set up, what do you want to try using Git for?
 
-	I want to use git on all my python projects (eg. waveguide viewer, mySQL and 
-	python) - I already did but I didn't use git properly, I made commits that were
-	far too large in those projects. 
+	I want to use git on all my python projects, eg. waveguide viewer, mySQL and 
+	python). I've used git in the past however I didn't really understand it, I 
+	made commits to save progress at the end of a working day, as opposed to commiting
+	each logical chunk. So this course has taught me not just what the git
+	commands are and how to use them, but when and why to use them. 
 
 	I'd also like to use it with uni projects. When trying MATLAB code, or even the
-	assignments write ups - I'm thinking capstone write up.
+	assignments write ups - I'm thinking capstone project write up.
