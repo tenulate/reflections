@@ -1,9 +1,9 @@
 What happens when you initialize a repository? Why do you need to do it?
 
-	When you initialise a repository with "git init" it creates a directory ".git". 
-	The dot infront means it's hidden, as you won't be editing or looking into this
-	directory. Instead when you make "git commits" and other changes, the history
-	of the project gets stored in the .git folder.
+	When you initialise a repository with "git init" it creates a directory ".git",
+	the file history and commit logs all get stored into this folder. 
+	(The dot infront means it's hidden, so git can do all its things behind the 
+	scenes).
 
 	You need to do this in order for git to start tracking changes to files in your 
 	working directory. Note that the initial "git init" command doesn't actually
@@ -19,22 +19,21 @@ What happens when you initialize a repository? Why do you need to do it?
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
-	The working directory is just the files that I can currently view and edit. Just
-	like a normal directory in windows/linux. The repository contains the history of
-	all the files in the working directory. This history is stored in a hidden 
-	folder .git within the working directory. The staging area is different to both
-	of these because it's basically a list of files in the working directory that 
-	you want to be recorded in the next git commit. It adds value by allowing me to 
-	specifiy which files I want to be added in the next commit. With this it is 
-	easier to split the commits into logically distinct transactions - for example
-	my first commit might only be the test_main.py file, because I'm doing test 
-	driven development where tests are written before the code. This is logically 
-	distinct from the code itself, so I would add test_main.py to the staging area, 
-	main.py might exist in the working directory but I don't want that added in this 
-	first commit. Commiting this first change I might have a commit message like 
-	"made a test file to run code against". Afterwards I would add main.py to the
-	staging area, then commit that change with a message "added first function to 
-	main"
+	The working directory is just a normal windows/linux directory that has your
+	project files in it, it's what's there even if you didn't have version control. 
+	The repository contains the history of all the files in the working directory. 
+	This history is stored in a hidden folder .git within the working directory. 
+	The staging area is different to both of these and is basically a list of the 
+	changes you want to record in the next commit. By choosing which changes to 
+	include in a commit it's easier to split the commits into logically distinct 
+	transactions. 
+	For example we may have been working on our website for a while, and after 
+	a couple of hours have 2 files, blog.html and style.css. Everything in blog.html
+	is related to our latest review of Star Trek fan fiction, where as style.css
+	has some colour schemes. Even though both have changed since your last commit, 
+	the staging area allows us to include only one in our next commit. That way our
+	commit messages won't look something like 
+	"Add review of 'Spock in space'. Also change the background from green to blue"
 
 
 How can you use the staging area to make sure you have one commit per logical 
@@ -42,8 +41,7 @@ change?
 
 	By adding only files that belong to a logical grouping (eg. all files related to
 	adding colour to a program) to the staging area we can commit only the changes
-	reflected in those files - and hence commit only changes related to eg. adding
-	colour.
+	reflected in those files.
 
 
 What are some situations when branches would be helpful in keeping your history 
@@ -61,9 +59,9 @@ organized? How would branches help?
 How do the diagrams help you visualize the branch structure?
 
 	Help visualise what has happened in each branch with short commit messages, 
-	where each branch diverge (and possibly merge), what part of the history each
+	where each branch diverge and merge, what part of the history each
 	branch (label) points to, and what commits are possibly unreachable if you don't
-	save a new branch.
+	save a new branch. Most importantly we can see the parent of each commit.
 
 
 What is the result of merging two branches together? Why do we represent it in 
