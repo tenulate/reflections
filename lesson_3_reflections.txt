@@ -23,3 +23,26 @@ stay up-to-date with your remote repository?
     made a commit while you're in the middle of coding your own contribution to the 
     software, and the problem would only get worse as more people contribute to the 
     project.
+
+Describe the differences between forks, clones, and branches. When would you use one 
+instead of another?
+
+    Cloning is part of git, it allows you to copy a repository to your local computer.
+    Note that the origin from which you are copying may either be remote or just 
+    another directory on the same computer. You would use this if the remote repo is 
+    not associated with GitHub and you wanted a copy on your own machine.
+
+    Forks are a part of GitHub. They are essentially the GitHub version of cloning, and
+    allow you to copy a repo stored on GitHub into your own account. By forking somebody
+    else's account, GitHub can track statistics on who and how many users are copying
+    a repository. So forks refer to copying from a GitHub repo, to another GitHub repo.
+    Note that this could be implemented soley with cloning, by copying somebody's GitHub
+    repo onto your own machine, then cloning this local copy to your own GitHub account.
+    The downside to this method is that it takes more operations, and the cloned version
+    you have stored on GitHub would have no link back to the original repo from which
+    you cloned it. You would fork when you want to clone a project from GitHub into 
+    your own GitHub account.
+
+    Branches are different file histories within the same repository. They exist in all
+    projects where git is used as version control. You would branch whenever you want to
+    experiment on some new code, or make changes without breaking the master branch.
