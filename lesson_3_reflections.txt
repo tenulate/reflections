@@ -10,4 +10,16 @@ When would you want to use a remote repository rather than keeping all your work
     many people collaborating together.
     
     
-    
+Why might you want to always pull changes manually rather than having Git automatically 
+stay up-to-date with your remote repository?
+
+	If git was set up to automatically pull from the remote repo then it would disrupt
+	your work flow. While in the middle of implementing new functionality to your code
+	somebody else could have pushed their latest changes to the repo. These changes may
+	conflict with your current work - which you're not ready to commit yet - and so you'd
+	have to perform a merge. Performing merges is a pretty complex task, it requires you
+	to understand two different pieces of code and decide if they are compatible. It would
+	be disruptive if you had to do this every time somebody else made a commit while 
+	you're in the middle of coding your own contribution to the software, and the problem
+	would only get worse as more people contribute to the project.
+
