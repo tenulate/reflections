@@ -1,0 +1,13 @@
+When would you want to use a remote repository rather than keeping all your work local?
+    
+    When working from multiple devices a local repo is not practical, as each device 
+    would have its own version of the project, and changes made on one device won't be 
+    reflected in all the other devices. In this case having a remote repo that all the
+    devices can access solves this problem as the latest commits can be pulled from 
+    the remote repo before beginning any edits. Once all the changes are made they can
+    be pushed back onto the remote repo, allowing all devices access to these updates.
+    The same idea holds not just for a single person working off multiple devices, but 
+    many people collaborating together.
+    
+    
+    
