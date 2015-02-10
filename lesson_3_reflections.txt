@@ -23,6 +23,7 @@ stay up-to-date with your remote repository?
     made a commit while you're in the middle of coding your own contribution to the 
     software, and the problem would only get worse as more people contribute to the 
     project.
+    
 
 Describe the differences between forks, clones, and branches. When would you use one 
 instead of another?
