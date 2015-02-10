@@ -23,7 +23,7 @@ stay up-to-date with your remote repository?
     made a commit while you're in the middle of coding your own contribution to the 
     software, and the problem would only get worse as more people contribute to the 
     project.
-    
+
 
 Describe the differences between forks, clones, and branches. When would you use one 
 instead of another?
@@ -47,3 +47,12 @@ instead of another?
     Branches are different file histories within the same repository. They exist in all
     projects where git is used as version control. You would branch whenever you want to
     experiment on some new code, or make changes without breaking the master branch.
+
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+    
+    It let's us know what changes we've made since we last synchronised with the remote
+    repo. This makes it easier to fetch the latest changes from the remote as git can
+    request just those commits submitted to the remote since a particular version. It 
+    also allows us to Fast Forward the merge between origin/master and local/master 
+    when no commits have been made to origin since our last fetch.
