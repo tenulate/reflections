@@ -68,20 +68,20 @@ would be harder?
     compile into one - this was more effort than it initially sounds like because all 
     the referencing and bibliography had to be checked after combining everything. This
     typically led to about 5 versions of each of our files named something like
-     "my_section v1.doc", "my_section_final.doc" and "my_section_final_v2.doc" and got
-     messy, but it worked b/c there were only 3 of us.
+    "my_section v1.doc", "my_section_final.doc" and "my_section_final_v2.doc" and got
+    messy, but it worked b/c there were only 3 of us.
 
-     Previously I've also used google docs shared folders to accomplish essentially the 
-     same thing. Even though there is google text editor it wasn't sufficient for our
-     report, so we had the same issue of having to combine several different .doc files
-     into one - along with the multiple versions of the same file problem.
+    Previously I've also used google docs shared folders to accomplish essentially the 
+    same thing. Even though there is google text editor it wasn't sufficient for our
+    report, so we had the same issue of having to combine several different .doc files
+    into one - along with the multiple versions of the same file problem.
 
-     These two solutions were very easy to implement because my classmates all know how
-     to use google drive, drop box, and facebook groups, so there is no barrier or 
-     learning curve to overcome. Multiple versions of the same file did become a problem
-     though.
+    These two solutions were very easy to implement because my classmates all know how
+    to use google drive, drop box, and facebook groups, so there is no barrier or 
+    learning curve to overcome. Multiple versions of the same file did become a problem
+    though.
 
-     For even smaller group work (groups of 2-3 in labs for example) we typically would
-     just email each other, with .zip files of the MATLAB code or current version of 
-     the report. This got tedious quite quickly as email conversations got quite long
-     just trying to make sure our partner had the latest updates we made.
+    For even smaller group work (groups of 2-3 in labs for example) we typically would
+    just email each other, with .zip files of the MATLAB code or current version of 
+    the report. This got tedious quite quickly as email conversations got quite long
+    just trying to make sure our partner had the latest updates we made.
