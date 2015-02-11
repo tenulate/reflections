@@ -56,3 +56,32 @@ What is the benefit of having a copy of the last known state of the remote store
     request just those commits submitted to the remote since a particular version. It 
     also allows us to Fast Forward the merge between origin/master and local/master 
     when no commits have been made to origin since our last fetch.
+
+
+How would you collaborate without using Git or GitHub? What would be easier, and what 
+would be harder?
+    
+    Last year I worked in a team of 3 for my engineering course that required a large(ish)
+    report to be submitted by the end of semester. We collaborated by starting a Facebook
+    group page, where we would upload all our documents. As we worked on different sections
+    of the report we had many of our own individual documents, which later we had to 
+    compile into one - this was more effort than it initially sounds like because all 
+    the referencing and bibliography had to be checked after combining everything. This
+    typically led to about 5 versions of each of our files named something like
+     "my_section v1.doc", "my_section_final.doc" and "my_section_final_v2.doc" and got
+     messy, but it worked b/c there were only 3 of us.
+
+     Previously I've also used google docs shared folders to accomplish essentially the 
+     same thing. Even though there is google text editor it wasn't sufficient for our
+     report, so we had the same issue of having to combine several different .doc files
+     into one - along with the multiple versions of the same file problem.
+
+     These two solutions were very easy to implement because my classmates all know how
+     to use google drive, drop box, and facebook groups, so there is no barrier or 
+     learning curve to overcome. Multiple versions of the same file did become a problem
+     though.
+
+     For even smaller group work (groups of 2-3 in labs for example) we typically would
+     just email each other, with .zip files of the MATLAB code or current version of 
+     the report. This got tedious quite quickly as email conversations got quite long
+     just trying to make sure our partner had the latest updates we made.
