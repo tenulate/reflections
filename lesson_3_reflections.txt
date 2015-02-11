@@ -85,3 +85,16 @@ would be harder?
     just email each other, with .zip files of the MATLAB code or current version of 
     the report. This got tedious quite quickly as email conversations got quite long
     just trying to make sure our partner had the latest updates we made.
+
+
+When would you want to make changes in a separate branch rather than directly in master?
+What benefits does each approach have?
+    
+    Making changes in a separate branch make it easier to collaborate with others on the
+    project, however there is a lot more over head compared to just editing the master. 
+    For projects where I'm working by myself I would prefer to directly edit the master
+    because it's quicker and I don't need to talk to anybody else about what changes I 
+    wish to make. Branching is more useful in a collaborative environment. It allows many
+    people to edit the same code in different branches, then merge them to master (or 
+    submit a pull request), which lets everybody else in the project know what they've
+    contributed.
